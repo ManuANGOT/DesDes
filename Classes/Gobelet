@@ -1,22 +1,22 @@
-import Dice from "./Des";
+import Des from "./Des";
 
 export default class Gobelet {
   private _value: number = 0;
-  private _dices: Dice[] = [];
+  private _des: Des[] = [];
 
 
 /**
  * Je peux rajouter des dés
  */
-  public ajoutDes(dice: Dice) {
-    this._dices.push(dice);
+  public ajoutDes(des: Des) {
+    this._des.push(des);
   }
   /**
    * Méthode pour récupérer la valeur du gobelet"
    *
    */
   public get values() {
-    return this._dices.map((dice) => dice.value);
+    return this._des.map((des) => des.value);
   }
   public get value() {
     return this._value;
@@ -28,8 +28,10 @@ export default class Gobelet {
    */
   public lanceTour() {
     this._value = 0;
-    this._dices.forEach((dice) => {
-      this._value += dice.lanceDes();
+    this._des.forEach((des) => {
+      this._value += des.lanceDes();
     });
   }
 }
+
+

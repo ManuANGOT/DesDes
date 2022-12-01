@@ -1,5 +1,5 @@
 import De from "./Des";
-import Gobelet from "./Gobelet.ts";
+import Gobelet from "./Gobelet";
 import Joueur from "./Joueur";
 
 export default class Game {

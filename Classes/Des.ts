@@ -1,4 +1,4 @@
-export default class De {
+export default class Des {
     private _sides: number;
     private _value: number = 0;
 
