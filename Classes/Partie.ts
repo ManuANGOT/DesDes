@@ -10,7 +10,7 @@ export default class Game {
   /**
    * Ici je détermine le nombre de joueurs, qui doit me donner
    * mon nombre de tours et de dés dans le gobelet
-   * @param joueurs 
+   * @param joueurs
    */
   private ajoutJoueurs(...joueurs: Joueur[]) {
     joueurs.forEach((joueurs) => this._joueurs.push(joueurs));
@@ -27,20 +27,17 @@ export default class Game {
     this._nombreDeTours = this._joueurs.length + 1;
   }
 
-
   public commenceJeu(...joueurs: Joueur[]) {
     this.ajoutJoueurs(...joueurs);
     this.nbTours();
     this.nbDes();
   }
 
- private commenceTour() {
+  public commenceTour() {
     this._joueurs.forEach((Joueur) => {
       Joueur.lanceTour(this._gobelet);
     });
   }
-
- 
 
   private gagnantDuTour(): Joueur {
     let gagnant: Joueur = this._joueurs[0];
@@ -65,7 +62,7 @@ export default class Game {
   }
 
   private gagnantTour(winner: Joueur) {
-    console.log(`Le Winner de ce tour est :  ${winner.nom} \r\n`);
+    console.log(`\tLe Winner de ce tour est :  ${winner.nom} \r\n`);
   }
 
   private remonteScoreTour() {
@@ -82,7 +79,9 @@ export default class Game {
 
   private ScoresTour() {
     this._joueurs.forEach((Joueur) => {
-      console.log(`\t ${Joueur.nom} a fait ${Joueur.score}`);
+      console.log(
+        `\r\t ${Joueur.nom} obtient ${Joueur.score} points !\r\n\t*******************************\n`
+      );
     });
   }
 
@@ -104,13 +103,13 @@ export default class Game {
    * Ici, je récupère le grand gagnant de la partie
    *
    */
-  private meilleurScore() {
+  public meilleurScore() {
     let gagnant: Joueur = this._joueurs[0];
     this._joueurs.forEach((Joueur) => {
       if (Joueur.gameScore > gagnant.gameScore) {
         gagnant = Joueur;
         console.log(
-          `*******************************\n And the Winner is : ${gagnant.nom}\n *******************************`
+          `\t******************************\n\t\tAnd the Winner is : ${gagnant.nom}\n\t *******************************`
         );
       }
     });

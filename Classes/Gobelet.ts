@@ -4,10 +4,9 @@ export default class Gobelet {
   private _value: number = 0;
   private _des: Des[] = [];
 
-
-/**
- * Je peux rajouter des dés
- */
+  /**
+   * Je peux rajouter des dés
+   */
   public ajoutDes(des: Des) {
     this._des.push(des);
   }
@@ -24,14 +23,11 @@ export default class Gobelet {
 
   /**
    * Je lance le tour en vidant mon gobelet ;)
-   * 
-   */
+   *   */
   public lanceTour() {
     this._value = 0;
     this._des.forEach((des) => {
-      this._value += des.lanceDes();
+    this._value += des.lanceDes();
     });
   }
 }
-
-
