@@ -1,0 +1,35 @@
+import Dice from "./Des";
+
+export default class Gobelet {
+  private _value: number = 0;
+  private _dices: Dice[] = [];
+
+
+/**
+ * Je peux rajouter des dés
+ */
+  public ajoutDes(dice: Dice) {
+    this._dices.push(dice);
+  }
+  /**
+   * Méthode pour récupérer la valeur du gobelet"
+   *
+   */
+  public get values() {
+    return this._dices.map((dice) => dice.value);
+  }
+  public get value() {
+    return this._value;
+  }
+
+  /**
+   * Je lance le tour en vidant mon gobelet ;)
+   * 
+   */
+  public lanceTour() {
+    this._value = 0;
+    this._dices.forEach((dice) => {
+      this._value += dice.lanceDes();
+    });
+  }
+}
