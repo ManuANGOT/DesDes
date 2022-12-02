@@ -87,7 +87,6 @@ export default class Game {
 
   /**
    *  La Méthode pour jouer
-   *
    */
   public jouePartie() {
     for (let i = 0; i < this._nombreDeTours; i++) {
@@ -101,7 +100,6 @@ export default class Game {
 
   /**
    * Ici, je récupère le grand gagnant de la partie
-   *
    */
   public meilleurScore() {
     let gagnant: Joueur = this._joueurs[0];

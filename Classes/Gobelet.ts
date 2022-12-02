@@ -1,5 +1,4 @@
 import Des from "./Des";
-
 export default class Gobelet {
   private _value: number = 0;
   private _des: Des[] = [];
@@ -10,6 +9,7 @@ export default class Gobelet {
   public ajoutDes(des: Des) {
     this._des.push(des);
   }
+  
   /**
    * Méthode pour récupérer la valeur du gobelet"
    *

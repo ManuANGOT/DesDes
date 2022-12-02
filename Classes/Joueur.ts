@@ -1,5 +1,4 @@
 import Gobelet from "./Gobelet";
-
 export default class Player {
   private _nom: string;
   private _score: number = 0;
@@ -7,6 +6,10 @@ export default class Player {
 
   constructor(name: string) {
     this._nom = name;
+  }
+  
+  get nom() {
+    return this._nom;
   }
 
   get score() {
@@ -20,10 +23,6 @@ export default class Player {
   public miseAJourGagnant() {
     this._gameScore += 1;
     this._score = 0;
-  }
-
-  get nom() {
-    return this._nom;
   }
 
   lanceTour(gobelet: Gobelet) {
